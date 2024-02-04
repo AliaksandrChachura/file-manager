@@ -1,0 +1,20 @@
+{
+  "name": "file-manager",
+  "version": "1.0.0",
+  "description": "creating file-manager project ",
+  "main": "index.mjs",
+  "scripts": {
+    "start": "node index.mjs",
+    "start:n": "node index.mjs --username=AliaksandrChachura",
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AliaksandrChachura/node-nodejs-basics.git"
+  },
+  "author": "Alaksandr Čačura",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AliaksandrChachura/node-nodejs-basics/issues"
+  },
+  "homepage": "https://github.com/AliaksandrChachura/node-nodejs-basics#readme"
+}
