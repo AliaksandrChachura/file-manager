@@ -1,20 +1,32 @@
-import { readdir, stat } from 'node:fs/promises';
+import { readdir } from 'node:fs/promises';
+import { statSync } from 'node:fs';
 
 const listFilesAndFolders = async (currentDirectory) => {
 	try {
 		const contents = await readdir(currentDirectory);
-		console.log(currentDirectory);
-		console.log(contents);
+		let data = [];
 
-		const files = contents.filter(item => stat(item).isFile());
-		const folders = contents.filter(item => stat(item).isDirectory());
+		contents
+			.filter(item => {
+				return statSync(`${currentDirectory}/${item}`).isDirectory();
+			})
+			.sort()
+			.forEach(folder => {
+				data.push({ Name: folder, Type: 'Directory'});
+			});
 
-		files.sort();
-		folders.sort();
+		contents
+			.filter(item => {
+				return statSync(`${currentDirectory}/${item}`).isFile();
+			})
+			.sort()
+			.forEach(file => {
+				data.push({ Name: file, Type: 'File'});
+			});
 
-		console.log('Type\tName');
-		folders.forEach(folder => console.log('Folder\t' + folder));
-		files.forEach(file => console.log('File\t' + file));
+		console.table(data);
+		console.log('');
+		console.log(`You are currently in ${ currentDirectory }`);
 	} catch(error) {
 		throw Error(error, 'Incorrect command. Please, try another one.')
 	}

@@ -5,7 +5,7 @@
   "main": "index.mjs",
   "scripts": {
     "start": "node index.mjs",
-    "start:n": "node index.mjs --username=AliaksandrChachura",
+    "start:n": "node index.mjs --username=AliaksandrChachura"
   },
   "repository": {
     "type": "git",
