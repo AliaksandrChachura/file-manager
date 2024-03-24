@@ -7,8 +7,7 @@ import {
     fsHandler,
     osHandler,
     hashHandler,
-    zipHandler,
-    errorHandler
+    zipHandler
 } from './src/handlers/index.js';
 
 import { parseArguments } from './src/helpers/getArguments.js';
