@@ -2,10 +2,10 @@
   "name": "file-manager",
   "version": "1.0.0",
   "description": "creating file-manager project ",
-  "main": "index.mjs",
+  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "node index.mjs",
-    "start:n": "node index.mjs --username=AliaksandrChachura"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
